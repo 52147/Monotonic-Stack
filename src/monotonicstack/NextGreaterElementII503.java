@@ -26,7 +26,7 @@ public class NextGreaterElementII503 {
 		
 		// circular array: traverse index: i % nums.length
 		// need two pass to get the correct result
-		// because first pass we not consider the left side of the traverse number
+		// because first pass we not consider the left side of the traverse number's index
 		for(int i = 2 *nums.length - 1; i >= 0; i--) {
 			
 			while(!stack.isEmpty() && nums[stack.peek()] <= nums[i % nums.length]) {
@@ -36,7 +36,7 @@ public class NextGreaterElementII503 {
 			// set the result array : -1 if not found the next larger number(stack empty) or found in the stack(top of the stack)
 			result[i % nums.length] = stack.isEmpty() ? -1 : nums[stack.peek()];
 			
-			// push the element because this element is the next element of the traverse element
+			// push the index because this element is the next element of the traverse element
 			// need this element to find whether is the next larger element
 			stack.push(i % nums.length);
 		}
@@ -51,7 +51,7 @@ public class NextGreaterElementII503 {
 /**
  * time: O(N) two traversals of the nums array
  * 
- * space: O(N) a stack of size n is used.
+ * space: O(N) a stack of size n is used. result array of size n is used.
  * 
  */
 

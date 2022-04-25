@@ -56,6 +56,14 @@ public class StockSpanner {
 		
 		int span = 1; // initialize each span with 1
 		
+		
+		// if not add the !s.isEmpty() in the while loop condition
+		// will get a EmptyStackException
+		// EmptyStackException:
+		// Thrown by methods in the Stack class to indicate that the stack is empty.
+	
+		
+		
 		// if we find the price is larger than the input price
 		// we stop pop and increase the span
 		// otherwise
